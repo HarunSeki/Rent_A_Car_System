@@ -1,1 +1,2 @@
-# Rent_A_Car_System
+Admin Account : admin
+Admin Password: admin
