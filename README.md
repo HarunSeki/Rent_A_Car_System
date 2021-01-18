@@ -1,1 +1,1 @@
-to register as Admin; emal : admin@gmail.com ; Password: admin
+to register as Admin; email : admin@gmail.com ; Password: admin
