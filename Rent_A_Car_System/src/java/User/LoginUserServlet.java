@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +29,14 @@ public class LoginUserServlet extends HttpServlet {
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("logUser", user);
+
+                Cookie cookie1 = new Cookie ("logEmail",logEmail);
+                Cookie cookie2 = new Cookie ("logPass",logPass);
+                cookie1.setMaxAge(10000);
+                cookie2.setMaxAge(10000);
+                response.addCookie(cookie1);
+                response.addCookie(cookie2);
+                
                 response.sendRedirect("userWelcomePage.jsp");
             } else {    
                 out.println("User doesnt exist");

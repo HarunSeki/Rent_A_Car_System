@@ -14,6 +14,10 @@
     if (user == null) {
         response.sendRedirect("index.jsp");
     }    
+
+
+
+    
     UserDao userData = new UserDao(ConnectionDao.getConnection());
     List<User> users = userData.listAllUsers();
     request.setAttribute("User_List", users);
